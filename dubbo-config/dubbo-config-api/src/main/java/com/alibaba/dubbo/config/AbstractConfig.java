@@ -134,6 +134,10 @@ public abstract class AbstractConfig implements Serializable {
         }
     }
 
+    /**
+     * 通过反射Method初始化config的属性
+     * @param config
+     */
     protected static void appendProperties(AbstractConfig config) {
         if (config == null) {
             return;
