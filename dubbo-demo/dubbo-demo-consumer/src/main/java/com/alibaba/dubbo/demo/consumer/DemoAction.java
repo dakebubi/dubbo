@@ -19,16 +19,23 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import com.alibaba.dubbo.demo.DemoService;
+import com.alibaba.dubbo.rpc.service.EchoService;
 
 public class DemoAction {
     
     private DemoService demoService;
 
+    private EchoService echoService;
+
     public void setDemoService(DemoService demoService) {
         this.demoService = demoService;
     }
 
-	public void start() throws Exception {
+    public void setEchoService(EchoService echoService) {
+        this.echoService = echoService;
+    }
+
+    public void start() throws Exception {
         for (int i = 0; i < Integer.MAX_VALUE; i ++) {
             try {
             	String hello = demoService.sayHello("world" + i);
