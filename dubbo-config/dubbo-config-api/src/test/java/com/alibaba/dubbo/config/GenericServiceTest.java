@@ -47,6 +47,9 @@ import com.alibaba.dubbo.rpc.service.GenericService;
  */
 public class GenericServiceTest {
 
+    /**
+     * 服务端接口泛化
+     */
     @Test
     public void testGenericServiceException() {
         ServiceConfig<GenericService> service = new ServiceConfig<GenericService>();
@@ -100,6 +103,9 @@ public class GenericServiceTest {
         }
     }
 
+    /**
+     * 客户端接口泛化
+     */
     @SuppressWarnings("unchecked")
     @Test
     public void testGenericReferenceException() {
@@ -113,7 +119,7 @@ public class GenericServiceTest {
         try {
             ReferenceConfig<GenericService> reference = new ReferenceConfig<GenericService>();
             reference.setApplication(new ApplicationConfig("generic-consumer"));
-            reference.setInterface(DemoService.class);
+            reference.setInterface(DemoService.class.getName());
             reference.setUrl("dubbo://127.0.0.1:29581?scope=remote");
             reference.setGeneric(true);
             GenericService genericService = reference.get();

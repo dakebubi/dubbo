@@ -20,7 +20,9 @@
 	
 	<dubbo:application name="dubbo-admin" />
 
-	<dubbo:registry address="${dubbo.registry.address}" check="false" file="false" />
+	<!--<dubbo:registry address="${dubbo.registry.address}" check="false" file="false" />-->
+	<!--使用dubbo协议的注册中心-->
+	<dubbo:registry address="${dubbo.registry.address}" check="false" file="false" protocol="dubbo"/>
 
 	<dubbo:reference id="registryService" interface="com.alibaba.dubbo.registry.RegistryService" check="false" />
 

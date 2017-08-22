@@ -22,7 +22,8 @@
 	
 	<bean id="demoService" class="com.alibaba.dubbo.demo.provider.DemoServiceImpl" />
 	
-	<dubbo:service interface="com.alibaba.dubbo.demo.DemoService" ref="demoService">
+	<dubbo:service interface="com.alibaba.dubbo.demo.DemoService" ref="demoService" >
+		<dubbo:parameter key="heartbeat" value="60000" />
 	</dubbo:service>
 	
 </beans>
